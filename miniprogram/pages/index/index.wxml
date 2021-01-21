@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="page-body">
+  <view class="page-section">
+    <view class="weui-cells__title">输入定存本金</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" auto-focus type="number" placeholder="单位：元" bindinput="bindPrincipalInput"/>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">输入年化收益</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input type="digit" class="weui-input" maxlength="2" placeholder="3" />
+        <text>%</text>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">输入定投时间</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input type="number" class="weui-input" maxlength="3" placeholder="单位年" />
+        <text>年</text>
+      </view>
+    </view>
+  </view>
+  <button type="primary">计算</button>
+</view>
