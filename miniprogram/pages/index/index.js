@@ -3,11 +3,10 @@ const app = getApp()
 
 Page({
   data: {
-    avatarUrl: './user-unlogin.png',
-    userInfo: {},
-    logged: false,
-    takeSession: false,
-    requestResult: ''
+    principal: null,
+    interest: null,
+    period: null,
+    income: null
   },
   bindPrincipalInput: function(e) {
     this.setData({
@@ -23,5 +22,16 @@ Page({
     this.setData({
       period: e.detail.value
     })
+  },
+  checkInputCompleteAndCalc: function() {
+    const {principal, interest, period } = this.data
+    if (principal != null && interest != null && period != null) {
+      let income = 0
+      for (let year = 0; year < period; year++) {
+        income += (income + principal) * (100 + interest)/100
+      }
+      return income
+    }
+    return null
   },
 })

@@ -12,7 +12,7 @@
     <view class="weui-cells__title">输入年化收益</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
-        <input type="digit" class="weui-input" maxlength="2" placeholder="3" />
+        <input type="digit" class="weui-input" maxlength="6" placeholder="3" bindinput="bindInterestInput" />
         <text>%</text>
       </view>
     </view>
@@ -21,10 +21,18 @@
     <view class="weui-cells__title">输入定投时间</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
-        <input type="number" class="weui-input" maxlength="3" placeholder="单位年" />
+        <input type="number" class="weui-input" maxlength="3" placeholder="单位年" bindinput="bindPeriodInput" />
         <text>年</text>
       </view>
     </view>
   </view>
-  <button type="primary">计算</button>
+  <view class="page-section">
+    <view class="weui-cells__title">定投{{ principal }}元，按年化{{ interest }}%,{{ period }}年后总收入</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <text>{{ income }}</text>
+        <text>元</text>
+      </view>
+    </view>
+  </view>
 </view>
